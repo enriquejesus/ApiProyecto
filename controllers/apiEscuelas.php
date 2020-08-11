@@ -1,7 +1,7 @@
 <?php
 
 //Se incluye el archivo escuelasModel.php 
-    include_once'models/escuelasModel.php';
+    require '../models/escuelasModel.php';
 
     class apiEscuelas {
     /* ---- Función de reutilización ----
