@@ -1,6 +1,6 @@
 <?php
 
-include_once 'db.php'; //Se incluye el archivo de la conexión a la BD
+require 'db.php'; //Se incluye el archivo de la conexión a la BD
 
     class EscuelasModel extends DB{ //Se inicia la clase EscuelasModel trayendo todos los datos de BD
 
