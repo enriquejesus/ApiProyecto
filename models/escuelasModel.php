@@ -12,7 +12,7 @@ require 'db.php'; //Se incluye el archivo de la conexión a la BD
 
         function obtenerEscuela($id){ //Se crea la función obtenerEscuela
             $query = $this->connect()->prepare('SELECT * FROM escuelas  WHERE id= :id'); //Se realiza el query 
-            $query->execute(['id' => $id]);
+            $query->execute(['id' => $id]);//Manda el id para buscar en específicos
     
             return $query; //Se regresa el query
         }//finaliza la función
