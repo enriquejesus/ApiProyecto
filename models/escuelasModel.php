@@ -9,5 +9,13 @@ require 'db.php'; //Se incluye el archivo de la conexión a la BD
             
             return $query; //Se regresa el query
         }//finaliza la función
+
+        function obtenerEscuela($id){ //Se crea la función obtenerEscuela
+            $query = $this->connect()->prepare('SELECT * FROM escuelas  WHERE id= :id'); //Se realiza el query 
+            $query->execute(['id' => $id]);
+    
+            return $query; //Se regresa el query
+        }//finaliza la función
+
     }//Finaliza la clase EscuelasModel
 ?>
