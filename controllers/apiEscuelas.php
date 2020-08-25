@@ -84,5 +84,19 @@
             }//fin else
         }//Fin de función 
 
+        function add($item){ //Inició de función add 
+            $escuela = new EscuelasModel();//Se crea un objeto y se asigna a EscuelasModel();
+    
+            $res = $escuela->nuevaEscuela($item);//Se manda a llamar el query y se agrega el item 
+            $this->exito('Nuevo registro exitoso');//Confirmación de registro
+        }//Fin de función add
+
+        function getImagen(){
+            return $this->logo;
+        }
+    
+        function getError(){
+            return $this->error;
+        }
     }
 ?>
