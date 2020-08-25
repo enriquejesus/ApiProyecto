@@ -17,5 +17,18 @@ require 'db.php'; //Se incluye el archivo de la conexión a la BD
             return $query; //Se regresa el query
         }//finaliza la función
 
+        function nuevaEscuela($escuela){//Se crea la función nuevaEscuela
+            $query = $this->connect()->prepare('INSERT INTO escuelas ( clave,nombre,telefono,direccion,logo)
+             VALUES ( :clave, :nombre, :telefono, :direccion, :logo)'); //Se realiza el query 
+            $query->execute([  //De la linea 23 - 28 se utiliza par clave->valor para ir asignado las variables
+                'clave' => $escuela['clave'],
+                'nombre' => $escuela['nombre'],
+                'telefono' => $escuela['telefono'],
+                'direccion' => $escuela['direccion'],
+                'logo' => $escuela['logo']]);
+    
+            return $query;//Se regresa el query
+        }//finaliza la función
+
     }//Finaliza la clase EscuelasModel
 ?>
