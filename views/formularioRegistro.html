@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <form action="functionAdd.php" method="POST" enctype="multipart/form-data"> <!-- Se tiene que agregar functionAdd.php -->
+        <p>Clave de la institución</p>
+        <input type="text" name="clave" required><br> <!--Una vez agregandolo, este debe de coincidir con los datos o valores definidos en la base de datos-->        <p>Nombre de la institución</p>
+        <input type="text" name="nombre" required><br>
+        <p>Teléfono de la institución</p>
+        <input type="text" name="telefono" required><br>
+        <p>Dirección de la institución</p>
+        <input type="text" name="direccion" required><br>
+        <p>Logo de la institución</p>
+        <input type="file" name="logo" required>
+
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
