@@ -30,5 +30,41 @@ require 'db.php'; //Se incluye el archivo de la conexión a la BD
             return $query;//Se regresa el query
         }//finaliza la función
 
+        function eliminarEscuela($id){//Se crea la función eliminarEscuela
+            $query = $this->connect()->prepare('DELETE  FROM escuelas  WHERE id= :id');//se realiza el query sql
+            $query->execute(['id' => $id]);//se manda el id para confirmar
+    
+            return $query;//retorna el query
+        }// fin de la función 
+
+        function actualizaEscuela($item){//Se crea la función actualizaEscuela
+            $query = $this->connect()->prepare(//Se realiza el query sql
+            'UPDATE  escuelas SET 
+            clave = :clave, 
+            nombre = :nombre,
+            telefono = :telefono, 
+            direccion = :direccion,
+            logo = :logo
+            WHERE id = :id'
+            );
+            /*
+                De la linea 42 - 48 se realiza la asignación de variables
+                donde debe ser iguales los datos del formulario al de la bd
+                para ser la actualización necesaria
+            */
+            $query->execute([//Ejecuta el query
+                'id'=> $item['id'],
+                'clave' => $item['clave'],
+                'nombre' => $item['nombre'],
+                'telefono' => $item['telefono'],
+                'direccion' => $item['direccion'],
+                'logo' => $item['logo']]);
+                /*
+                 * De la linea 56 - 61 se hace asignación de 
+                 * par clave - valor para realizar el query
+                 */
+            return $query;//retorna el query
+        }//fin de la función
+
     }//Finaliza la clase EscuelasModel
 ?>
